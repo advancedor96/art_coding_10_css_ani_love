@@ -1,0 +1,134 @@
+*{
+	box-sizing: border-box;
+}
+.control{
+	z-index: 1;
+	position: absolute;
+}
+/***********************************************************
+ *                         PAGE 1                          *
+ ***********************************************************/
+
+ .page1{
+	 background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.rec{
+	width: 500px;
+	height: 250px;
+	background-color: #fff;
+	border-radius: 3%;
+	position: relative;
+	animation: recAni 2s ease-in-out infinite ;
+}
+.rec:hover .box{
+	animation-play-state: paused;
+	cursor: not-allowed;
+}
+.box{
+	width: 20px;
+	height: 20px;
+	background-color: green;
+	border: 1px solid black;
+	position: absolute;
+	left: 0%;
+	top: calc(50% - 10px);
+	animation: boxAni 1s ease-in-out 0s infinite alternate;
+
+}
+
+@keyframes boxAni{
+	0%{
+		left: 0%;
+		border-radius: 5px;
+	}
+	50%{
+		border-radius: 50%;
+		width:50px;
+		height: 50px;
+
+	}
+	100%{
+		width:50px;
+		height: 50px;
+		left: calc(100% - 50px);
+		background-color: red;
+		border-radius: 5px;
+	}
+}
+
+@keyframes recAni{
+	0%, 100%{
+		transform: rotate(0deg) ;
+		
+	}
+	50%{
+		transform: rotate(45deg) ;
+
+	}
+}
+
+
+
+/***********************************************************
+ *                          PAGE2                          *
+ ***********************************************************/
+ 
+ .page2{
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+}
+.title{
+	position: absolute;
+	top:3px;
+	left:3px;
+	color: white;
+}
+.container{
+	width: 400px;
+	height: 30px;
+	border: 2px green;
+	position: absolute;
+	left: 50%;
+	top: calc(50% - 30px);
+	transform-origin: 0% 50%;
+}
+.ball{
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #fff;
+	position: absolute;
+	top:50%;
+	transform: translateY(-50%);
+	animation: ball_ani 2s ease-in-out  0s infinite alternate;
+}
+@keyframes ball_ani{
+	0%{
+		width: 10px;
+		height: 10px;
+		transform: translateX(0);
+	}
+	100%{
+		width: 50px;
+		height: 50px;
+		background-color: red;
+		transform: translateX(300px);
+
+	}
+}
